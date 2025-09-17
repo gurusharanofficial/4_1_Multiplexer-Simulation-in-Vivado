@@ -46,7 +46,6 @@ and g3(w[2],I[2],S[0],~S[1]);
 and g4(w[3],I[3],S[0],S[1]);
 or g5(y,w[0],w[1],w[2],w[3]);
 endmodule
-
 ```
 ### 4:1 MUX Gate-Level Implementation- Testbench
 ```verilog
@@ -74,7 +73,6 @@ $display("selection is %b %b ,output : %b",S[1],S[0],y);
 $finish;
 end
 endmodule
-
 ```
 ## Simulated Output Gate Level Modelling
 
@@ -94,7 +92,6 @@ assign w[3]=(s[1])&&(~s[0])&&I[2];
 assign w[4]=(s[1])&&(s[0])&&I[3];
 assign Y=w[1]||w[2]||w[3]||w[4];
 endmodule
-
 ```
 ### 4:1 MUX Data flow Modelling- Testbench
 ```verilog
@@ -125,7 +122,6 @@ endmodule
 ## Simulated Output Dataflow Modelling
 
 <img width="1895" height="1195" alt="image" src="https://github.com/user-attachments/assets/f79b1fc2-7180-4cf9-b3e4-46a2ed0f3145" />
-
 
 ---
 ### 4:1 MUX Behavioral Implementation
@@ -195,7 +191,6 @@ module mux2to1 (Y, I0, I1, S);
   or  (Y, w2, w3);
 endmodule
 
-
 module mux4to1 (Y, I, S);
   output Y;
   input [3:0] I;
@@ -204,9 +199,6 @@ module mux4to1 (Y, I, S);
   mux2to1 m1(w1, I[0], I[1], S[0]);
   mux2to1 m2(w2, I[2], I[3], S[0]);
   mux2to1 m3(Y, w1, w2, S[1]);
-
- 
-
 endmodule
 
 ```
@@ -235,13 +227,9 @@ $display("selection is %b %b ,output : %b",S[1],S[0],Y);
 $finish;
 end
 endmodule
-
 ```
 ## Simulated Output Structural Modelling
-
-![Uploading Screenshot 2025-09-17 134221.png…]()
-
-
+<img width="1919" height="1199" alt="Screenshot 2025-09-17 134221" src="https://github.com/user-attachments/assets/dec4d32f-0c29-40e2-b974-e3391e7700c1" />
 
 ---
 ### CONCLUSION
